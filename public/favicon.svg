@@ -5,7 +5,7 @@
       .icon { fill: #f5f5f5; stroke: #f5f5f5; }
     }
   </style>
-  <path class="icon" d="M9 15h14a1 1 0 0 1 1 1 8 8 0 0 1-8 8h-0a8 8 0 0 1-8-8 1 1 0 0 1 1-1z"/>
-  <path class="icon" d="M12 15v-2M16 15v-3M20 15v-2" stroke-width="1.6" stroke-linecap="round" fill="none"/>
-  <rect class="icon" x="8" y="24" width="16" height="1.6" rx="0.8"/>
+  <path class="icon" d="M4 14h24a1.5 1.5 0 0 1 1.5 1.5c0 7.2-5.8 13-13 13h0c-7.2 0-13-5.8-13-13A1.5 1.5 0 0 1 4 14z"/>
+  <path class="icon" d="M9 14v-4M16 14v-6M23 14v-4" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+  <rect class="icon" x="2" y="29.5" width="28" height="1.8" rx="0.9"/>
 </svg>
