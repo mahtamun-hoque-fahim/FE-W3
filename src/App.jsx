@@ -5,10 +5,12 @@ function App() {
   const [meals, setMeals] = useState([])
   const [loading, setLoading] = useState(false)
   const [selectedMeal, setSelectedMeal] = useState(null)
+  const [hasSearched, setHasSearched] = useState(false)
   const resultsRef = useRef(null)
 
   const searchMeals = async () => {
     setLoading(true)
+    setHasSearched(true)
     const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
     const data = await res.json()
     setMeals(data.meals || [])
@@ -33,7 +35,7 @@ function App() {
       </div>
 
       {loading && <p>Loading...</p>}
-      {!loading && meals.length === 0 && query && <p>No recipes found.</p>}
+      {!loading && hasSearched && meals.length === 0 && <p>No recipes found.</p>}
 
       <div className="grid" ref={resultsRef}>
         {meals.map((meal) => (
