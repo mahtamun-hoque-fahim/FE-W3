@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import './App.css'
 function App() {
   const [query, setQuery] = useState('')
   const [meals, setMeals] = useState([])
@@ -14,33 +14,38 @@ function App() {
     setLoading(false)
   }
   return (
-    <div>
+    <div className="app">
       <h1>Recipe Finder</h1>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search recipes..."
-      />
-      <button onClick={searchMeals}>Search</button>
+      <div className="search-bar">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search recipes..."
+        />
+        <button onClick={searchMeals}>Search</button>
+      </div>
 
       {loading && <p>Loading...</p>}
       {!loading && meals.length === 0 && query && <p>No recipes found.</p>}
 
-      <div>
+      <div className="grid">
         {meals.map((meal) => (
-          <div key={meal.idMeal} onClick={() => setSelectedMeal(meal)}>
-            <img src={meal.strMealThumb} alt={meal.strMeal} width="150" />
+          <div className="card" key={meal.idMeal} onClick={() => setSelectedMeal(meal)}>
+            <img src={meal.strMealThumb} alt={meal.strMeal} />
             <p>{meal.strMeal}</p>
           </div>
         ))}
       </div>
+
       {selectedMeal && (
-        <div>
-          <button onClick={() => setSelectedMeal(null)}>Close</button>
-          <h2>{selectedMeal.strMeal}</h2>
-          <img src={selectedMeal.strMealThumb} alt={selectedMeal.strMeal} width="300" />
-          <p>{selectedMeal.strInstructions}</p>
+        <div className="overlay" onClick={() => setSelectedMeal(null)}>
+          <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setSelectedMeal(null)}>Close</button>
+            <h2>{selectedMeal.strMeal}</h2>
+            <img src={selectedMeal.strMealThumb} alt={selectedMeal.strMeal} />
+            <p>{selectedMeal.strInstructions}</p>
+          </div>
         </div>
       )}
     </div>
