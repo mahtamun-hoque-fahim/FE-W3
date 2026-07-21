@@ -1,6 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#121212"/>
-  <path d="M9 15h14a1 1 0 0 1 1 1 8 8 0 0 1-8 8h-0a8 8 0 0 1-8-8 1 1 0 0 1 1-1z" fill="#3df49a"/>
-  <path d="M12 15v-2M16 15v-3M20 15v-2" stroke="#3df49a" stroke-width="1.6" stroke-linecap="round"/>
-  <rect x="8" y="24" width="16" height="1.6" rx="0.8" fill="#3df49a"/>
+  <style>
+    .icon { fill: #121212; stroke: #121212; }
+    @media (prefers-color-scheme: dark) {
+      .icon { fill: #f5f5f5; stroke: #f5f5f5; }
+    }
+  </style>
+  <path class="icon" d="M9 15h14a1 1 0 0 1 1 1 8 8 0 0 1-8 8h-0a8 8 0 0 1-8-8 1 1 0 0 1 1-1z"/>
+  <path class="icon" d="M12 15v-2M16 15v-3M20 15v-2" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+  <rect class="icon" x="8" y="24" width="16" height="1.6" rx="0.8"/>
 </svg>
