@@ -4,6 +4,7 @@ function App() {
   const [query, setQuery] = useState('')
   const [meals, setMeals] = useState([])
   const [loading, setLoading] = useState(false)
+  const [selectedMeal, setSelectedMeal] = useState(null)
 
   const searchMeals = async () => {
     setLoading(true)
@@ -25,14 +26,23 @@ function App() {
 
       {loading && <p>Loading...</p>}
       {!loading && meals.length === 0 && query && <p>No recipes found.</p>}
+
       <div>
         {meals.map((meal) => (
-          <div key={meal.idMeal}>
+          <div key={meal.idMeal} onClick={() => setSelectedMeal(meal)}>
             <img src={meal.strMealThumb} alt={meal.strMeal} width="150" />
             <p>{meal.strMeal}</p>
           </div>
         ))}
       </div>
+      {selectedMeal && (
+        <div>
+          <button onClick={() => setSelectedMeal(null)}>Close</button>
+          <h2>{selectedMeal.strMeal}</h2>
+          <img src={selectedMeal.strMealThumb} alt={selectedMeal.strMeal} width="300" />
+          <p>{selectedMeal.strInstructions}</p>
+        </div>
+      )}
     </div>
   )
 }
