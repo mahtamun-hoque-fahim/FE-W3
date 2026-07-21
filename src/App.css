@@ -12,22 +12,22 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
 }
 
 .glow {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.6);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(61, 244, 154, 0.22) 0%, rgba(61, 244, 154, 0.08) 40%, rgba(61, 244, 154, 0) 70%);
-  filter: blur(60px);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(61, 244, 154, 0.18) 0%, rgba(61, 244, 154, 0.06) 45%, rgba(61, 244, 154, 0) 70%);
+  filter: blur(80px);
   border-radius: 50%;
   opacity: 0;
   animation: glow-reveal 2s ease-out forwards;
   pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes glow-reveal {
