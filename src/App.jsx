@@ -22,15 +22,20 @@ function App() {
   return (
     <div className="app">
       <div className="hero">
-        <h1>Recipe Finder</h1>
-        <div className="search-bar">
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search recipes..."
-          />
-          <button onClick={searchMeals}>Search</button>
+        <div className="glow" />
+        <div className="hero-content">
+          <h1 className="fly-in fly-in-1">Recipe Finder</h1>
+          <div className="search-bar">
+            <input
+              className="fly-in fly-in-2"
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && searchMeals()}
+              placeholder="Search recipes..."
+            />
+            <button className="fly-in fly-in-3" onClick={searchMeals}>Search</button>
+          </div>
         </div>
       </div>
 
