@@ -24,7 +24,7 @@ function App() {
       <button onClick={searchMeals}>Search</button>
 
       {loading && <p>Loading...</p>}
-
+      {!loading && meals.length === 0 && query && <p>No recipes found.</p>}
       <div>
         {meals.map((meal) => (
           <div key={meal.idMeal}>
